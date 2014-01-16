@@ -7,6 +7,7 @@
 //
 
 #import "dmAppDelegate.h"
+#import "ContentsViewController.h"
 
 @implementation dmAppDelegate
 
@@ -16,6 +17,7 @@
     
     UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     
+
 //    dmMenuViewController* rightMenu = (dmMenuViewController*)[mainStoryBoard instantiateViewControllerWithIdentifier:@"dmMenuViewController"];
 //    rightMenu.view.backgroundColor = [UIColor yellowColor];                                                                                                                                                                                                                                                             
 //    rightMenu.cellIdentifier = @"rightMenuCell";
@@ -27,6 +29,14 @@
     [SlideNavigationController sharedInstance].leftMenu = leftMenu;
     
     
+    /*
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    // Override point for customization after application launch.
+    ContentsViewController* viewController = [[ContentsViewController alloc] initWithNibName:@"ContentsViewController" bundle:nil];
+    //[[[ViewController alloc] initWithNibName:@"ViewController" bundle:nil] autorelease];
+    self.window.rootViewController = viewController;
+    [self.window makeKeyAndVisible];
+    */
     return YES;
 }
 							

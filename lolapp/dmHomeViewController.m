@@ -7,6 +7,7 @@
 //
 
 #import "dmHomeViewController.h"
+#import "ContentsViewController.h"
 
 @implementation dmHomeViewController
 
