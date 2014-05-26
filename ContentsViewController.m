@@ -11,8 +11,9 @@
 #import "ContentCell.h"
 #import "CommentsViewController.h"
 #import "tooles.h"
+#import "SlideNavigationController.h"
 
-@interface ContentsViewController ()<PullingRefreshTableViewDelegate, UITableViewDataSource, UITableViewDelegate>
+@interface ContentsViewController ()<PullingRefreshTableViewDelegate, UITableViewDataSource, UITableViewDelegate, SlideNavigationControllerDelegate>
 @property (retain, nonatomic) PullingRefreshTableView *pullTableView;
 @end
 
@@ -31,7 +32,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-//    [self.view setBackgroundColor:[UIColor clearColor]];
+    [self.view setBackgroundColor:[UIColor clearColor]];
     self.edgesForExtendedLayout = UIRectEdgeNone;
     [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"main_background.png"]]];
     CGRect bounds = self.view.bounds;
@@ -160,6 +161,18 @@
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
     [self.pullTableView tableViewDidEndDragging:scrollView];
+}
+
+#pragma mark - SlideNavigationControllerDelegate
+
+- (BOOL)slideNavigationControllerShouldDisplayLeftMenu
+{
+    return YES;
+}
+
+- (BOOL)slideNavigationControllerShouldDisplayRightMenu
+{
+    return NO;
 }
 
 @end

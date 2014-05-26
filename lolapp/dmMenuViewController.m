@@ -71,7 +71,7 @@
             vc = [mainStoryboard instantiateViewControllerWithIdentifier:@"dmHomeViewController"]; // 赋值示例标识符
             break;
         case 1:
-            vc = [mainStoryboard instantiateViewControllerWithIdentifier:@"dmProfileViewController"];
+            vc = [mainStoryboard instantiateViewControllerWithIdentifier:@"ContentsViewController"];
             break;
         case 2:
             vc = [mainStoryboard instantiateViewControllerWithIdentifier:@"dmFriendsViewController"];

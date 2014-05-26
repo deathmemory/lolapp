@@ -13,14 +13,19 @@
 @interface ASINetworkQueue : NSOperationQueue <ASIProgressDelegate, ASIHTTPRequestDelegate, NSCopying> {
 	
 	// Delegate will get didFail + didFinish messages (if set)
-	id __unsafe_unretained delegate;
+	id delegate;
 
 	// Will be called when a request starts with the request as the argument
 	SEL requestDidStartSelector;
 	
-	// Will be called when a request receives response headers with the request as the argument
+	// Will be called when a request receives response headers
+	// Should take the form request:didRecieveResponseHeaders:, where the first argument is the request, and the second the headers dictionary
 	SEL requestDidReceiveResponseHeadersSelector;
 	
+	// Will be called when a request is about to redirect
+	// Should take the form request:willRedirectToURL:, where the first argument is the request, and the second the new url
+	SEL requestWillRedirectSelector;
+
 	// Will be called when a request completes with the request as the argument
 	SEL requestDidFinishSelector;
 	
@@ -31,7 +36,7 @@
 	SEL queueDidFinishSelector;
 	
 	// Upload progress indicator, probably an NSProgressIndicator or UIProgressView
-	id __unsafe_unretained uploadProgressDelegate;
+	id uploadProgressDelegate;
 	
 	// Total amount uploaded so far for all requests in this queue
 	unsigned long long bytesUploadedSoFar;
@@ -40,7 +45,7 @@
 	unsigned long long totalBytesToUpload;
 
 	// Download progress indicator, probably an NSProgressIndicator or UIProgressView
-	id __unsafe_unretained downloadProgressDelegate;
+	id downloadProgressDelegate;
 	
 	// Total amount downloaded so far for all requests in this queue
 	unsigned long long bytesDownloadedSoFar;
@@ -85,6 +90,7 @@
 
 @property (assign) SEL requestDidStartSelector;
 @property (assign) SEL requestDidReceiveResponseHeadersSelector;
+@property (assign) SEL requestWillRedirectSelector;
 @property (assign) SEL requestDidFinishSelector;
 @property (assign) SEL requestDidFailSelector;
 @property (assign) SEL queueDidFinishSelector;

@@ -103,10 +103,10 @@ return(data);
 
 - (void)setData:(NSData *)inData
 {
-if (data != inData)
-	{
-//    [data release];
-//    data = [inData retain];
+    if (data != inData)
+    {
+    //    [data release];
+        data = inData;
     }
 
 if (data)

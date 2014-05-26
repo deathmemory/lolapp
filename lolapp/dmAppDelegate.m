@@ -26,11 +26,17 @@
     leftMenu.view.backgroundColor = [UIColor lightGrayColor];
     leftMenu.cellIdentifier = @"leftMenuCell";
 //    [SlideNavigationController sharedInstance].righMenu = rightMenu;
-    [SlideNavigationController sharedInstance].leftMenu = leftMenu;
-    
-    
+    SlideNavigationController* slideNavigationCtrl = [SlideNavigationController sharedInstance];
+    slideNavigationCtrl.leftMenu = leftMenu;
+
+    // 透明度设置为0.3
+    slideNavigationCtrl.navigationBar.alpha = 1.0;
+    // 元素背景设置为黑色
+//    slideNavigationCtrl.navigationBar.tintColor = [UIColor colorWithRed:0.000 green:0.000 blue:0.000 alpha:1.000];
+    // 设置为半透明
+    slideNavigationCtrl.navigationBar.translucent = NO;
     /*
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];	
     // Override point for customization after application launch.
     ContentsViewController* viewController = [[ContentsViewController alloc] initWithNibName:@"ContentsViewController" bundle:nil];
     //[[[ViewController alloc] initWithNibName:@"ViewController" bundle:nil] autorelease];

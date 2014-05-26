@@ -78,7 +78,7 @@
         <!--Slide Navigation Controller-->
         <scene sceneID="IIQ-QE-F8x">
             <objects>
-                <navigationController definesPresentationContext="YES" id="ziV-ni-uKP" customClass="SlideNavigationController" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="SlideNavigationController" definesPresentationContext="YES" id="ziV-ni-uKP" customClass="SlideNavigationController" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="TwU-zk-5at">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -88,7 +88,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Doi-eX-s8u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1023" y="630"/>
+            <point key="canvasLocation" x="-1019" y="630"/>
         </scene>
         <!--Dm Menu View Controller-->
         <scene sceneID="QRO-lr-6Cz">
@@ -215,10 +215,10 @@
             </objects>
             <point key="canvasLocation" x="10" y="-402"/>
         </scene>
-        <!--View Controller - Item-->
+        <!--Dm Login View Controller - Item-->
         <scene sceneID="0Lk-C9-yPm">
             <objects>
-                <viewController id="WJq-Ae-9tZ" sceneMemberID="viewController">
+                <viewController id="WJq-Ae-9tZ" customClass="dmLoginViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6c4-L3-4Uf"/>
                         <viewControllerLayoutGuide type="bottom" id="69B-Gk-0ec"/>
@@ -236,7 +236,8 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Pass word" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V6o-1n-vaV">
                                 <rect key="frame" x="74" y="154" width="173" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ToS-VH-RBg">
@@ -246,7 +247,8 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="SD8-nl-xKM" kind="push" id="9Y0-aP-Czh"/>
+                                    <action selector="loginClick:" destination="WJq-Ae-9tZ" eventType="touchUpInside" id="l1c-t0-MR0"/>
+                                    <segue destination="SD8-nl-xKM" kind="push" id="x3A-bg-bPc"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -255,6 +257,8 @@
                     <tabBarItem key="tabBarItem" title="Item" id="nN5-0y-fuD"/>
                     <navigationItem key="navigationItem" id="02b-JN-VKS"/>
                     <connections>
+                        <outlet property="passWord" destination="V6o-1n-vaV" id="IRI-Fo-HCw"/>
+                        <outlet property="userName" destination="AZ6-1R-reR" id="QTK-DS-5E1"/>
                         <segue destination="cvV-yS-vsC" kind="push" id="cpI-jD-Ver"/>
                         <segue destination="P2a-hI-d6v" kind="push" id="YNH-db-b0W"/>
                     </connections>
@@ -263,10 +267,10 @@
             </objects>
             <point key="canvasLocation" x="-555" y="630"/>
         </scene>
-        <!--Contents View Controller - HOME-->
+        <!--Dm Home View Controller - HOME-->
         <scene sceneID="wWf-wu-hmr">
             <objects>
-                <viewController storyboardIdentifier="dmHomeViewController" id="SD8-nl-xKM" customClass="ContentsViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="dmHomeViewController" id="SD8-nl-xKM" customClass="dmHomeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nDV-8v-YvV"/>
                         <viewControllerLayoutGuide type="bottom" id="nKw-9h-alb"/>
@@ -286,7 +290,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.098890084069999995" green="0.90361894229999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="HOME" id="WHE-Oi-ckM"/>
                 </viewController>
@@ -456,10 +460,10 @@
             </objects>
             <point key="canvasLocation" x="507" y="1677"/>
         </scene>
-        <!--Dm Profile View Controller - Proflie-->
+        <!--Contents View Controller - ShareFrame-->
         <scene sceneID="vue-d5-TRh">
             <objects>
-                <viewController storyboardIdentifier="dmProfileViewController" id="cvV-yS-vsC" customClass="dmProfileViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ContentsViewController" id="cvV-yS-vsC" customClass="ContentsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Mfu-3X-Rr2"/>
                         <viewControllerLayoutGuide type="bottom" id="abf-uc-F6Z"/>
@@ -467,29 +471,9 @@
                     <view key="view" contentMode="scaleToFill" id="TlR-Sy-gmp">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="nMW-6w-Rz0">
-                                <rect key="frame" x="53" y="134" width="117" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <segments>
-                                    <segment title="male"/>
-                                    <segment title="Female"/>
-                                </segments>
-                            </segmentedControl>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VtE-RR-vGF">
-                                <rect key="frame" x="53" y="202" width="159" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Push to another page">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="shQ-Q1-biW" kind="push" id="ejd-iO-9m7"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Proflie" id="VoN-Rx-ReX"/>
+                    <navigationItem key="navigationItem" title="ShareFrame" id="VoN-Rx-ReX"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1qk-dm-Qyw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

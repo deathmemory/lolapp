@@ -9,6 +9,7 @@
 #import "RenRenSharer.h"
 #import "SHSAuthorization2Controller.h"
 #import "SHSAPIKeys.h"
+#import <CommonCrypto/CommonDigest.h>
 
 #define url @"http://api.renren.com/restserver.do"
 
@@ -83,7 +84,7 @@
     [self shareText:text];
 }
 
--(NSString *)md5:(NSString *)str { 
+-(NSString *)md5:(NSString *)str { // Implicit declaration of function 'CC_MD5' is invalid
     const char *cStr = [str UTF8String]; 
     unsigned char result[16]; 
     CC_MD5( cStr, strlen(cStr), result ); 

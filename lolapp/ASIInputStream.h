@@ -16,7 +16,7 @@
 
 @interface ASIInputStream : NSObject {
 	NSInputStream *stream;
-	ASIHTTPRequest __unsafe_unretained *request;
+	ASIHTTPRequest *request;
 }
 + (id)inputStreamWithFileAtPath:(NSString *)path request:(ASIHTTPRequest *)request;
 + (id)inputStreamWithData:(NSData *)data request:(ASIHTTPRequest *)request;
