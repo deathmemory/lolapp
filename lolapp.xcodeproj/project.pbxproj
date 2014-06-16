@@ -28,6 +28,8 @@
 		4FA6B5DA187FF38B00B21D38 /* dmFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA6B5D9187FF38B00B21D38 /* dmFriendsViewController.m */; };
 		4FA6B5DF187FF8B500B21D38 /* menu-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FA6B5DD187FF8B500B21D38 /* menu-button.png */; };
 		4FA6B5E0187FF8B500B21D38 /* menu-button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FA6B5DE187FF8B500B21D38 /* menu-button@2x.png */; };
+		4FA6E53619332D7B00BBD0BB /* dmOperatePlist.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA6E53519332D7B00BBD0BB /* dmOperatePlist.m */; };
+		4FA6E5381933542700BBD0BB /* Demo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4FA6E5371933542700BBD0BB /* Demo.plist */; };
 		4FA81B5F1883CD5E002D3059 /* dmWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA81B5E1883CD5E002D3059 /* dmWebView.m */; };
 		4FA8F8CC188D238900F35433 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FA8F8CB188D238900F35433 /* CFNetwork.framework */; };
 		4FA8F8D0188D241600F35433 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FA8F8CF188D241600F35433 /* SystemConfiguration.framework */; };
@@ -214,6 +216,9 @@
 		4FA6B5D9187FF38B00B21D38 /* dmFriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dmFriendsViewController.m; sourceTree = "<group>"; };
 		4FA6B5DD187FF8B500B21D38 /* menu-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu-button.png"; sourceTree = "<group>"; };
 		4FA6B5DE187FF8B500B21D38 /* menu-button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu-button@2x.png"; sourceTree = "<group>"; };
+		4FA6E53419332D7B00BBD0BB /* dmOperatePlist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dmOperatePlist.h; sourceTree = "<group>"; };
+		4FA6E53519332D7B00BBD0BB /* dmOperatePlist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dmOperatePlist.m; sourceTree = "<group>"; };
+		4FA6E5371933542700BBD0BB /* Demo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Demo.plist; sourceTree = "<group>"; };
 		4FA81B5D1883CD5E002D3059 /* dmWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dmWebView.h; sourceTree = "<group>"; };
 		4FA81B5E1883CD5E002D3059 /* dmWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dmWebView.m; sourceTree = "<group>"; };
 		4FA8F8CB188D238900F35433 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -480,6 +485,7 @@
 		4FA6B58B187FD0C100B21D38 = {
 			isa = PBXGroup;
 			children = (
+				4FA6E53319332AB500BBD0BB /* plistFile */,
 				4FA8F8CE188D23EC00F35433 /* qssrc */,
 				4FAA44621887D2B2007A36D6 /* qsImages */,
 				4FAA44401887C01E007A36D6 /* ContentsViewController.h */,
@@ -578,6 +584,8 @@
 				4FA6B5D0187FE59800B21D38 /* dmMenuViewController.m */,
 				4FA81B5D1883CD5E002D3059 /* dmWebView.h */,
 				4FA81B5E1883CD5E002D3059 /* dmWebView.m */,
+				4FA6E53419332D7B00BBD0BB /* dmOperatePlist.h */,
+				4FA6E53519332D7B00BBD0BB /* dmOperatePlist.m */,
 			);
 			name = customClasses;
 			sourceTree = "<group>";
@@ -593,6 +601,14 @@
 				4FA6B5CD187FD30300B21D38 /* SlideNavigationController.m */,
 			);
 			name = source;
+			sourceTree = "<group>";
+		};
+		4FA6E53319332AB500BBD0BB /* plistFile */ = {
+			isa = PBXGroup;
+			children = (
+				4FA6E5371933542700BBD0BB /* Demo.plist */,
+			);
+			name = plistFile;
 			sourceTree = "<group>";
 		};
 		4FA8F6AE188D1C4B00F35433 /* staticlib */ = {
@@ -1234,6 +1250,7 @@
 				4FA6B5A2187FD0C100B21D38 /* InfoPlist.strings in Resources */,
 				4FAA44A41887D2B3007A36D6 /* icon_for_good.png in Resources */,
 				4FAA44A81887D2B3007A36D6 /* icon_my_enable.png in Resources */,
+				4FA6E5381933542700BBD0BB /* Demo.plist in Resources */,
 				4FA6B5E0187FF8B500B21D38 /* menu-button@2x.png in Resources */,
 				4FAA43F81887B84B007A36D6 /* blueArrowDown@2x.png in Resources */,
 				4FAA44A21887D2B3007A36D6 /* icon_for_bad.png in Resources */,
@@ -1288,6 +1305,7 @@
 				4FAA442D1887B84B007A36D6 /* tooles.m in Sources */,
 				4FAA440A1887B84B007A36D6 /* NSString+URLEncoding.m in Sources */,
 				4FAA43F91887B84B007A36D6 /* PullingRefreshTableView.m in Sources */,
+				4FA6E53619332D7B00BBD0BB /* dmOperatePlist.m in Sources */,
 				4FAA44261887B84B007A36D6 /* LoadingView.m in Sources */,
 				4FA6B5D4187FEF5600B21D38 /* dmHomeViewController.m in Sources */,
 				4FA6B5D1187FE59800B21D38 /* dmMenuViewController.m in Sources */,

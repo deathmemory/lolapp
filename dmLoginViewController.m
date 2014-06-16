@@ -11,6 +11,7 @@
 #import "ASIHttpHeaders.h"
 #import "tooles.h"
 #import "CJSONDeserializer.h"
+#import "dmOperatePlist.h"
 
 @interface dmLoginViewController ()
 @property (strong, nonatomic) IBOutlet UITextField *userName;
@@ -33,9 +34,11 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    [self.navigationController setNavigationBarHidden:YES];
+    [self.navigationController setNavigationBarHidden:YES]; // 隐藏导航栏
     [self.userName becomeFirstResponder];
     [self.passWord setSecureTextEntry:YES];
+//    [dmOperatePlist writeToPlist:@"teststring" key:@"testKey"];
+//    NSString *valstr = [dmOperatePlist read:@"testKey"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -65,7 +68,6 @@
 	[request setDelegate:self];
 	[request startAsynchronous];
 }
-
 //获取请求结果
 - (void)GetResult:(ASIHTTPRequest *)request{
 	//取消登录状态
@@ -79,7 +81,11 @@
     //判断是否登陆成功
     if ([result isEqual: @"SUCCESS"]) {
         NSString* info = [[dictionary objectForKey:@"result"] objectForKey:@"user_email"];
-		[tooles MsgBox:info];
+		NSLog(@"logInfo:%@", info);
+        [self.navigationController setNavigationBarHidden:NO]; //显示导航栏
+        UIStoryboard *secondStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        UIViewController* test2obj = [secondStoryBoard instantiateViewControllerWithIdentifier:@"dmHomeViewController"];  //test2为viewcontroller的StoryboardId
+        [self.navigationController pushViewController:test2obj animated:YES];
 		return;
     }else{
 		[tooles MsgBox:[dictionary objectForKey:@"msg"]];

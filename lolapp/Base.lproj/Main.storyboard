@@ -241,14 +241,13 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ToS-VH-RBg">
-                                <rect key="frame" x="137" y="221" width="46" height="30"/>
+                                <rect key="frame" x="137" y="248" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Login">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="loginClick:" destination="WJq-Ae-9tZ" eventType="touchUpInside" id="l1c-t0-MR0"/>
-                                    <segue destination="SD8-nl-xKM" kind="push" id="x3A-bg-bPc"/>
+                                    <action selector="loginClick:" destination="WJq-Ae-9tZ" eventType="touchUpInside" id="fmf-D5-Dy3"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -486,6 +485,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="qv4-fN-g9t"/>
+        <segue reference="1LD-JG-PpS"/>
     </inferredMetricsTieBreakers>
 </document>
